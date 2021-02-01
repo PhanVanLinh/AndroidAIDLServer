@@ -20,5 +20,17 @@ class RemoteService : Service() {
             Log.i("TAG", "Server app receive $action")
             Thread.sleep(1000)
         }
+
+        override fun onewayFunctionCall(value: Int) {
+            Log.i("TAG", "onewayFunctionCall receive $value")
+            Thread.sleep(1000)
+            Log.i("TAG", "finish $value")
+        }
+
+        override fun noneOneWayFunctionCall(value: Int) {
+            Log.i("TAG", "none-onewayFunctionCall receive $value")
+            Thread.sleep(1000)
+            Log.i("TAG", "finish $value")
+        }
     }
 }
